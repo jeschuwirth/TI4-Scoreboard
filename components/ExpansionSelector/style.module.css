@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2em;
+}
+
+.expansionFont {
+    font-size: 60px;
+}
+
+.warningFont {
+    font-size: 30px;
+}
+
+.checkbox {
+    width: 30px;
+    height: 30px;
+}
