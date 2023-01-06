@@ -1,9 +1,7 @@
 import styles from "./style.module.css"
 import ExpansionSelector from "../ExpansionSelector"
 import Counter from "../Counter"
-import factions from "../../public/factions.json"
-import colors from "../../public/playerColors.json"
-import { useState, useRef } from "react"
+import { useState } from "react"
 import { useRouter } from "next/navigation"
 import PlayerInput from "../PlayerInput"
 
@@ -13,14 +11,26 @@ export default function GameSetup() {
     // Acá va el react
     const [players, setPlayers] = useState(3);
     const [points, setPoints] = useState(10);
-    const [playerinfo, setplayerinfo]  = useState([]);
+    const [playerInfo, setPlayerInfo]  = useState([{
+        faction: "Arborek",
+        color: "red",
+        name: ""
+    },
+    {
+        faction: "Arborek",
+        color: "red",
+        name: ""
+    },
+    {
+        faction: "Arborek",
+        color: "red",
+        name: ""
+    }]);
 
     const router = useRouter();
-    const ref = useRef<any>(null)
 
     function handleSubmit( e:React.FormEvent ){
         e.preventDefault();
-        console.log(ref.current)
         router.push("/game")
     }
 
@@ -43,7 +53,7 @@ export default function GameSetup() {
             }
 
             <div className={styles.container}> { Array.from(Array(players).keys()).map((_) => 
-                <PlayerInput key = {_} setplayerinfo = {setplayerinfo} />
+                <PlayerInput key = {_}  playerInfo = {playerInfo} setPlayerInfo={setPlayerInfo}/>
 
                 )}
             </div>
