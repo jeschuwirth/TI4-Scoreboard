@@ -25,3 +25,14 @@
     font-size: 25px;
     height: 50px;
 }
+
+.playerinputcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.playerinputFont {
+    font-size: 25px;
+}
